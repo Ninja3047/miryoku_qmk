@@ -38,14 +38,14 @@ KC_TRNS,  K20,  K21,  K22,  K23,  K24,         K25,  K26,  K27,  K28,  K29,  KC_
      U_NA,           U_NA,          U_NA,         U_NA,         U_NA,  /*|*/   KC_GRV,      KC_LBRC,      KC_RBRC,         KC_EQL,      KC_BSLS,   \
      KC_LGUI,        KC_LALT,       KC_LCTL,      KC_LSFT,      U_NA,  /*|*/   U_NA,        KC_LPRN,      KC_RPRN,         KC_SCLN,     KC_COLN,   \
      U_NA,           KC_RALT,       U_NA,         U_NA,         U_NA,  /*|*/   U_NA,        KC_LCBR,      KC_RCBR,         KC_PLUS,     KC_MINS,   \
-                                         U_NP, U_NP, U_NA, U_NA, U_NA,          U_NA, U_NA, U_NA, U_NP, U_NP
+                                        U_NP, U_NP, U_NA, U_NA, U_NA,          U_NA, U_NA, U_NA, U_NP, U_NP
 
 #define MIRYOKU_LAYERMAPPING_SYM2 LAYOUT_miryoku
 #define MIRYOKU_LAYER_SYM2 \
      KC_UNDS,        KC_AMPR,       KC_LT,        KC_GT,        KC_CIRC,  /*|*/   U_NA,     U_NA,         U_NA,         U_NA,       U_NA,     \
      KC_ASTR,        KC_TILD,       KC_DLR,       KC_PERC,      KC_PIPE,  /*|*/   U_NA,     KC_LSFT,      KC_LCTL,      KC_LALT,    KC_LGUI,  \
      KC_HASH,        KC_AT,         KC_EXLM,      KC_EQL,       U_NA,     /*|*/   U_NA,     U_NA,         U_NA,         U_NA,       U_NA,     \
-                                         U_NP, U_NP, U_NA, U_NA, U_NA,          U_NA, U_NA, U_NA, U_NP, U_NP
+                                           U_NP, U_NP, U_NA, U_NA, U_NA,          U_NA, U_NA, U_NA, U_NP, U_NP
 
 #define MIRYOKU_LAYERMAPPING_NAV LAYOUT_miryoku
 #define MIRYOKU_LAYER_NAV \
@@ -59,4 +59,4 @@ U_NP,              U_NP,              U_NA,              U_NA,              U_NA
      KC_ESC,      KC_Q,             KC_W,          KC_F,         KC_P,         KC_B,  /*|*/   KC_J, KC_L,         KC_U,         KC_Y,             KC_QUOT,       KC_ESC,   \
      KC_BSPC,     LGUI_T(KC_A),     LALT_T(KC_R),  LCTL_T(KC_S), LSFT_T(KC_T), KC_G,  /*|*/   KC_M, LSFT_T(KC_N), LCTL_T(KC_E), LALT_T(KC_I),     LGUI_T(KC_O),  KC_BSPC,  \
      KC_DEL,      KC_Z,             ALGR_T(KC_X),  KC_C,         KC_D,         KC_V,  /*|*/   KC_K, KC_H,         KC_DOT,       ALGR_T(KC_SLASH), KC_COMMA,      KC_DEL,   \
-                        LT(U_MEDIA, KC_TAB), LT(U_NAV, KC_SPC), LT(U_SYM1, KC_ENT),           LT(U_SYM2, KC_ENT), LT(U_NUM, KC_SPC), LT(U_FUN, KC_TAB)
+                         LT(U_MEDIA, KC_TAB), LT(U_NAV, KC_SPC), LT(U_SYM1, KC_ENT),          LT(U_SYM2, KC_ENT), LT(U_NUM, KC_SPC), LT(U_FUN, KC_TAB)
