@@ -3,6 +3,7 @@
 
 // This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 2 of the License, or (at your option) any later version. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with this program. If not, see <http://www.gnu.org/licenses/>.
 
+#include "oled_driver.h"
 #include QMK_KEYBOARD_H
 
 #include "manna-harbour_miryoku.h"
@@ -41,3 +42,50 @@ combo_t key_combos[COMBO_COUNT] = {
   COMBO(thumbcombos_fun, KC_APP)
 };
 #endif
+
+#ifdef OLED_ENABLE
+
+void render_status_main(void) {
+    oled_write_P(PSTR("Layer:"), false);
+    switch (get_highest_layer(layer_state)) {
+        case U_BASE:
+            oled_write_P(PSTR(" BASE"), false);
+            break;
+        case U_SYM1:
+            oled_write_P(PSTR(" SYM1"), false);
+            break;
+        case U_SYM2:
+            oled_write_P(PSTR(" SYM2"), false);
+            break;
+        case U_NAV:
+            oled_write_P(PSTR(" NAV "), false);
+            break;
+        case U_NUM:
+            oled_write_P(PSTR(" NUM "), false);
+            break;
+        case U_FUN:
+            oled_write_P(PSTR(" FUN "), false);
+            break;
+        case U_MEDIA:
+            oled_write_P(PSTR(" MED "), false);
+            break;
+        default:
+            oled_write_P(PSTR(" UNK "), false);
+    }
+#ifdef WPM_ENABLE
+    oled_write_P(PSTR("  WPM: "), false);
+    oled_write(get_u8_str(get_current_wpm(), '0'), false);
+#endif /* WPM_ENABLE */
+
+    return;
+}
+
+bool oled_task_user(void) {
+    if (is_keyboard_master()) {
+        render_status_main();
+    }
+
+    return false;
+}
+
+#endif /* OLED_ENABLE */
